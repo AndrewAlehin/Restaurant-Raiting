@@ -1,6 +1,7 @@
 package ru.andrewalehin.restaurantrating.util;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.experimental.UtilityClass;
@@ -16,6 +17,7 @@ public class RestaurantsUtil {
         .map(restaurant -> new RestaurantTo(restaurant.getId(), restaurant.getName(),
             restaurant.getDate(), restaurant.getVotes().size(),
             MealsUtil.getTos(restaurant.getMeals())))
+        .sorted(Comparator.comparing(RestaurantTo::getName))
         .collect(Collectors.toList());
   }
 

@@ -21,9 +21,9 @@ public class RestaurantTestData {
   public static final int REST_RESTAURANT_ID = 80;
 
   public static final Restaurant restaurant1 = new Restaurant(RESTAURANT1_ID, "Ресторан",
-      LocalDate.of(2021, 1, 8), UserTestData.users);
+      LocalDate.of(2021, 1, 8), UserTestData.users, Set.of());
   public static final Restaurant restaurant2 = new Restaurant(RESTAURANT2_ID, "Ресторан2",
-      LocalDate.of(2021, 1, 8), Set.of(UserTestData.admin));
+      LocalDate.of(2021, 1, 8), Set.of(UserTestData.admin), Set.of());
 
   public static final Set<Restaurant> restaurants = Set.of(restaurant1, restaurant2);
 
