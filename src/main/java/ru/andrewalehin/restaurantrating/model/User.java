@@ -1,6 +1,5 @@
 package ru.andrewalehin.restaurantrating.model;
 
-import static org.hibernate.validator.constraints.SafeHtml.WhiteListType.NONE;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Collection;
@@ -28,7 +27,6 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.hibernate.validator.constraints.SafeHtml;
 import org.springframework.util.CollectionUtils;
 import ru.andrewalehin.restaurantrating.HasIdAndEmail;
 
@@ -45,7 +43,6 @@ public class User extends AbstractNamedEntity implements HasIdAndEmail {
   @Email
   @NotBlank
   @Size(max = 100)
-  @SafeHtml(whitelistType = NONE)  // https://stackoverflow.com/questions/17480809
   private String email;
 
   @Column(name = "password", nullable = false)

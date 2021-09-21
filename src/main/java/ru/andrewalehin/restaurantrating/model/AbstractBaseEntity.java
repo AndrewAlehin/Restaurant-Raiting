@@ -31,6 +31,7 @@ public abstract class AbstractBaseEntity implements Persistable<Integer>, HasId 
   protected Integer id;
 
   // doesn't work for hibernate lazy proxy
+  @Override
   public int id() {
     Assert.notNull(id, "Entity must has id");
     return id;

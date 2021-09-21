@@ -1,6 +1,5 @@
 package ru.andrewalehin.restaurantrating.to;
 
-import static org.hibernate.validator.constraints.SafeHtml.WhiteListType.NONE;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -9,7 +8,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
-import org.hibernate.validator.constraints.SafeHtml;
 import ru.andrewalehin.restaurantrating.HasIdAndEmail;
 
 @Value
@@ -21,13 +19,11 @@ public class UserTo extends BaseTo implements HasIdAndEmail, Serializable {
 
   @NotBlank
   @Size(min = 2, max = 100)
-  @SafeHtml(whitelistType = NONE)
   String name;
 
   @Email
   @NotBlank
   @Size(max = 100)
-  @SafeHtml(whitelistType = NONE) // https://stackoverflow.com/questions/17480809
   String email;
 
   @NotBlank

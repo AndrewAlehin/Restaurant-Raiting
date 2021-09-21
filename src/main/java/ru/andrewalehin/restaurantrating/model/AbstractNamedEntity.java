@@ -1,7 +1,5 @@
 package ru.andrewalehin.restaurantrating.model;
 
-import static org.hibernate.validator.constraints.SafeHtml.WhiteListType.NONE;
-
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotBlank;
@@ -11,7 +9,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.validator.constraints.SafeHtml;
 
 
 @MappedSuperclass
@@ -24,7 +21,6 @@ public abstract class AbstractNamedEntity extends AbstractBaseEntity {
   @NotBlank
   @Size(min = 2, max = 100)
   @Column(name = "name", nullable = false)
-  @SafeHtml(whitelistType = NONE)
   protected String name;
 
   protected AbstractNamedEntity(Integer id, String name) {
